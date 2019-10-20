@@ -8,6 +8,8 @@ class ShapeDispatcher extends Component {
         "SQUARE": 3
     };
 
+    static counter = 0;
+
     constructor(props) {
         super(props);
         this.state = {
@@ -24,10 +26,10 @@ class ShapeDispatcher extends Component {
                 {(() => {
                     switch (this.state.inputShape) {
                         case ShapeDispatcher.SHAPES.CIRCLE:
-                            this.state.shapes.push(<Circle />);
+                            this.state.shapes.push(<Circle key={++ShapeDispatcher.counter}/>);
                             break;
                         default:
-                            this.state.shapes.push(<p>tttt</p>);
+                            this.state.shapes.push(<Circle key={++ShapeDispatcher.counter}/>);
                     }
                     return this.state.shapes;
                 })()}

@@ -5,7 +5,7 @@ import './Circle.css';
 class Circle extends Component {
 
     render() {
-        return (<span className="dot bounce"></span>);
+        return (<span className="dot circle-anim"></span>);
     }
 
 }
